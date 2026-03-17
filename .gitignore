@@ -1,0 +1,62 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+
+# Compiled binaries
+dist_db
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Database files
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# MPI specific
+*.rank*
+
+# Benchmark results (generated data, not scripts)
+benchmark_results/
+tests/*.sql
+# Logs
+*.log
+
+# Backup files
+*.bak
+*.tmp
+*~
+
+# Core dumps
+core
+core.*
