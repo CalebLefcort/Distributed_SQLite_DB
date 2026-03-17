@@ -49,6 +49,7 @@ Thumbs.db
 # Benchmark results (generated data, not scripts)
 benchmark_results/
 tests/*.sql
+
 # Logs
 *.log
 
