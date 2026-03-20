@@ -6,7 +6,7 @@ Reads benchmark_results/summary.csv and produces PNG charts.
 Usage:
   python tests/plot_results.py [--input benchmark_results/summary.csv] [--output benchmark_results/plots/]
 
-Requires: matplotlib (pip install matplotlib)
+Requires: matplotlib
 """
 
 import argparse
@@ -21,7 +21,7 @@ try:
     import matplotlib.pyplot as plt
     import matplotlib.ticker as ticker
 except ImportError:
-    print("ERROR: matplotlib is required. Install with: pip install matplotlib")
+    print("ERROR: matplotlib is required.")
     sys.exit(1)
 
 
