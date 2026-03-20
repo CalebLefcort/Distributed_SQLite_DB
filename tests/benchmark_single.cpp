@@ -1,3 +1,9 @@
+// benchmark_single.cpp - Benchmarks single-node SQLite performance as a baseline
+// for comparison against the distributed system. Reads SQL statements from a file,
+// executes them on a local SQLite instance (in-memory or on-disk), and reports
+// per-statement and total execution times. Supports optional transaction batching
+// of consecutive write operations to mirror the distributed system's behavior.
+
 #include <sqlite3.h>
 #include <chrono>
 #include <fstream>
