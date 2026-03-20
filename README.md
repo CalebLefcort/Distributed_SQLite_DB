@@ -18,7 +18,7 @@ A distributed SQL database built with MPI and SQLite. Data is hash-sharded acros
           └───────┘└───────┘└───────┘
 ```
 
-- **Coordinator** - Parses SQL commands, determines target worker(s) using shard key (`id % num_workers`), dispatches via MPI, and merges results.
+- **Coordinator** - Parses SQL commands, determines target worker(s) using shard key (`id % num_workers + 1`), dispatches via MPI, and merges results.
 - **Workers** - Each maintains its own SQLite database file and executes operations locally.
 - **Sharding** - Rows are distributed by the first integer value in `INSERT` or `WHERE id = N` clauses. DDL and queries without a shard key are broadcast to all workers.
 
