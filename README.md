@@ -61,7 +61,7 @@ This produces three executables:
 mpirun -np 4 ./dist_db
 ```
 
-This starts 1 coordinator + 3 worker nodes. You'll get a `sql>` prompt to enter commands.
+This starts 1 coordinator + 3 worker nodes. You'll get a `mysql>` prompt to enter commands.
 
 ### File mode
 
