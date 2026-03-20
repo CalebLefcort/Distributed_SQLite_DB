@@ -761,7 +761,7 @@ void handle_update(const std::string& sql, int shard_key, const std::string& cur
     } else {
         // Broadcast to all workers
         for (int i = 1; i < world_size; i++)
-            MPI_Send(&msg, sizeof(DatabaseMessage), MPI_BYTE, i, TAG_UPDATE, MPI_COMM_WORLD);
+            send_db_msg(msg, i, TAG_UPDATE);
 
         int success_count = 0;
         for (int i = 1; i < world_size; i++) {
