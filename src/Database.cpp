@@ -81,8 +81,8 @@ bool Database::execute_write(const std::string& sql) {
     char* zErrMsg = 0;
     int rc = sqlite3_exec(db, sql.c_str(), 0, 0, &zErrMsg);
     if (rc != SQLITE_OK) {
-        std::cerr << "SQL Error: " << zErrMsg << "\n";
-        sqlite3_free(zErrMsg);
+        std::cerr << "SQL Error: " << (zErrMsg ? zErrMsg : "Unknown error") << "\n";
+        if (zErrMsg) sqlite3_free(zErrMsg);
         return false;
     }
     return true;
@@ -97,8 +97,8 @@ std::string Database::execute_read(const std::string& sql) {
     SelectCallbackState state;
     int rc = sqlite3_exec(db, sql.c_str(), select_callback, &state, &zErrMsg);
     if (rc != SQLITE_OK) {
-        std::cerr << "SQL Error: " << zErrMsg << "\n";
-        sqlite3_free(zErrMsg);
+        std::cerr << "SQL Error: " << (zErrMsg ? zErrMsg : "Unknown error") << "\n";
+        if (zErrMsg) sqlite3_free(zErrMsg);
         return "ERROR";
     }
     return state.result;
