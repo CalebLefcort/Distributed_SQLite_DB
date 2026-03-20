@@ -1,3 +1,7 @@
+// Database.cpp - Wraps SQLite operations for a single node's database file.
+// Handles opening, closing, and switching databases, and provides methods for
+// executing read (SELECT) and write (INSERT/UPDATE/DELETE/DDL) SQL statements.
+
 #include "Database.hpp"
 #include <iostream>
 #include <cstdio>

@@ -1,3 +1,8 @@
+// Coordinator.cpp - Runs on MPI rank 0 and acts as the central command router.
+// Accepts SQL commands (interactively or from a file), parses them, and dispatches
+// work to worker nodes via MPI. Handles database/table management, shard-key-based
+// routing for DML operations, and aggregation of SELECT results from all workers.
+
 #include "Coordinator.hpp"
 #include "Protocol.hpp"
 #include "CommandParser.hpp"

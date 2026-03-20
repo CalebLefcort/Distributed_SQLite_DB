@@ -1,3 +1,8 @@
+// CommandParser.cpp - Parses raw SQL input strings into structured commands.
+// Identifies command types (CREATE/DROP DATABASE, USE, DDL, INSERT, SELECT,
+// UPDATE, DELETE), extracts database/table names, and determines shard keys
+// for routing queries to the correct worker node.
+
 #include "CommandParser.hpp"
 #include <algorithm>
 #include <cctype>

@@ -1,3 +1,7 @@
+// main.cpp - Entry point for the distributed SQLite system. Initializes MPI,
+// determines whether this process is the coordinator (rank 0) or a worker node,
+// and dispatches to the appropriate role.
+
 #include <mpi.h>
 #include <string>
 #include "Coordinator.hpp"

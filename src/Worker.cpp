@@ -1,3 +1,8 @@
+// Worker.cpp - Runs on each non-zero MPI rank as a worker node. Listens for
+// messages from the coordinator and executes database operations (create, drop,
+// use, DDL, insert, update, delete, select) on its local SQLite shard, sending
+// results or acknowledgements back to the coordinator.
+
 #include "Worker.hpp"
 #include "Database.hpp"
 #include "Protocol.hpp"
