@@ -101,8 +101,6 @@ static bool dispatch_command(const CommandParser::ParsedCommand& cmd,
     return true;
 }
 
-// Sends a batch of targeted INSERTs in a single fan-out (no per-INSERT ACK wait).
-// All messages are sent first; then all ACKs are collected.
 // Broadcasts a single DDL statement (e.g. "BEGIN" / "COMMIT") to every worker
 // via TAG_TABLE_DDL and waits for all ACKs before returning.
 static void broadcast_ddl(const char* sql, const std::string& current_database, int world_size) {

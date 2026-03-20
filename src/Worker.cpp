@@ -34,7 +34,7 @@ void run_worker(int rank) {
     while (true) {
         MPI_Status status;
 
-        // Block until a message arrives — zero latency vs. the old 10ms poll sleep
+        // Block until a message arrives
         MPI_Probe(MPI_ANY_SOURCE, MPI_ANY_TAG, MPI_COMM_WORLD, &status);
 
         switch (status.MPI_TAG) {
